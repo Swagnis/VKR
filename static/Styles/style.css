@@ -1,0 +1,36 @@
+#add {
+    margin-left: 5px !important;
+}
+
+#remove {
+    margin-left: 5px !important;
+}
+
+#save {
+    margin-left: 5px !important;
+}
+
+#upload {
+    margin-left: 5px !important;
+}
+
+#graph {
+    height: 600px;
+    border: 1px solid lightgray;
+}
+
+#agentGraph {
+    height: 600px;
+    border: 1px solid lightgray;
+}
+
+.tooltip-inner {
+    max-width: 350px !important; 
+    /* If max-width does not work, try using width instead */
+    width: 350px !important; 
+    word-wrap: break-word;
+}
+
+#selectFile {
+    width: 500px !important;
+}

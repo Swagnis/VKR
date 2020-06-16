@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head> 
+        <title>Website</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge;" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.0.min.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+
+        <script src="Scripts/script.js"></script>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:5000/index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:5000/denotation_graph.html">Денотатный граф</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Коллокации <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:5000/analysis.html">Морфологический анализ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost:5000/artificial_agent.html">Диалоговый агент</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+                </form>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="form-group" style="margin-top: 10px !important;">
+                <label for="inputText">Введите текст для поиска коллокаций</label>
+                <textarea class="form-control" id="inputText" rows="10"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="filtrationFules">Выберите правило фильтрации</label>
+                <select multiple class="form-control" id="filtrationRules">
+                    <option value="0">Не короче N</option>
+                    <option value="1">Не длиннее N</option>
+                    <option value="2">Не менее N слов в коллокации</option>
+                    <option value="3">Не более N слов в коллокации</option>
+                    <option value="4">Вес не менее N</option>
+                    <option value="5">Вес не более N</option>
+                </select>
+            </div>
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="pickerN">Выберите число N:</label>
+                    <input class="form-control" style="margin-left: 5px !important;" type="number" value="1" id="pickerN">
+                </div>
+                <div class="form-group" style="margin-left: 5px !important;">
+                    <button id="getCollocations" class="btn btn-primary" onClick="getCollocations()">Выделить коллокации</button>
+                </div>
+                <div class="form-group" style="margin-left: 5px !important;">
+                    <select class="form-control" id="languageDropdown">
+                        <option value="0">Русский</option>
+                        <option value="1">Английский</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="collocationList">Коллокации</label>
+                <select multiple class="form-control" id="collocationList"></select>
+            </div>
+        </div>
+    </body>
+</html>
